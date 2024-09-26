@@ -8,7 +8,6 @@ def BaseNumber():
         options.append(base)
     return options
 
-#qwdqwdqwdqwd
 def Convert(number, currentbase, futurebase):
     rests = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
     currentbase = int(currentbase)
