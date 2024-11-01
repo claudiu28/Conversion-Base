@@ -6,47 +6,48 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel = "icon" type="image/png" href="{% static 'icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'icon.png' %}">
     <title>Base Converter</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
 <body>
-    <br /><br/>
+<br/><br/>
 
-    <div class = "container mt-5 border border-3 rounded border-success">
-        <form method="post" action="">
-             {% csrf_token %}
-            <h1 class="h3 mb-3 fw-normal mt-4">Converting number:</h1>
-            <div class="form-floating">
-              <input type="text" class="form-control" id="floatingInput" placeholder="Number to covert..." name = "number">
-              <label for="floatingInput">Number to covert</label>
-            </div>
-            <h3 class = "mt-5 fw-normal">Select your bases, from 2 to 16:</h3>
-            <div class="input-group mb-3 ">
-              <label class="input-group-text" for="inputGroupSelect01">Your current base is:</label>
-              <select class="form-select" id="inputGroupSelect01" name = "current_base">
-                  {% for bases in options %}
-                      <option  value = "{{ bases }}">Base: {{ bases }}</option>
-                  {% endfor %}
-              </select>
-            </div>
-            <div class="input-group mb-3 mt-2">
-              <label class="input-group-text" for="inputGroupSelect01">To future base:</label>
-              <select class="form-select" id="inputGroupSelect01" name = "future_base">
-                  {% for bases in options %}
-                      <option  value="{{ bases }}">Base: {{ bases }}</option>
-                  {% endfor %}
-              </select>
-            </div>
-            <button type="submit" class="btn btn-outline-success w-100 mb-4" >Convert</button>
-        </form>
-    </div>
-    <div class="container mt-5">
-        <h3 style="text-align: center">
-            Your result from converting {{ number }}, from base {{ first_base }} to {{ second_base }} is: <strong class = "text-info"> {{ result }} </strong>.
-        </h3>
-    </div>
+<div class="container mt-5 border border-3 rounded border-success">
+    <form method="post" action="">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 fw-normal mt-4">Converting number:</h1>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Number to covert..." name="number">
+            <label for="floatingInput">Number to covert</label>
+        </div>
+        <h3 class="mt-5 fw-normal">Select your bases, from 2 to 16:</h3>
+        <div class="input-group mb-3 ">
+            <label class="input-group-text" for="inputGroupSelect01">Your current base is:</label>
+            <select class="form-select" id="inputGroupSelect01" name="current_base">
+                {% for bases in options %}
+                    <option value="{{ bases }}">Base: {{ bases }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-group mb-3 mt-2">
+            <label class="input-group-text" for="inputGroupSelect01">To future base:</label>
+            <select class="form-select" id="inputGroupSelect01" name="future_base">
+                {% for bases in options %}
+                    <option value="{{ bases }}">Base: {{ bases }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-success w-100 mb-4">Convert</button>
+    </form>
+</div>
+<div class="container mt-5">
+    <h3 style="text-align: center">
+        Your result from converting {{ number }}, from base {{ first_base }} to {{ second_base }} is: <strong
+            class="text-info"> {{ result }} </strong>.
+    </h3>
+</div>
 </body>
 </html>

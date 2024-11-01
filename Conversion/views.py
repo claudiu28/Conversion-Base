@@ -2,7 +2,6 @@ from django.shortcuts import render
 
 
 def BaseNumber():
-    # Options for bases to convert numbers
     options = []
     for base in range(2, 17):
         options.append(base)

@@ -4,23 +4,25 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>Conversion home</title>
-    <link rel = "icon" type="image/png" href="{% static 'icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'icon.png' %}">
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
 <body>
 <br/><br/><br/>
-    <div class = "container mt-5">
-       <div class="card border-danger mb-3 w-100" >
+<div class="container mt-5">
+    <div class="card border-danger mb-3 w-100">
         <div class="card-header fw-bold">Error detected!!!</div>
         <div class="card-body text-danger">
             <h5 class="card-title">Your number couldn`t be converted</h5>
             <p class="card-text">{{ errors_context }}</p>
         </div>
-           <div class="card-footer bg-transparent border-success"><a href = "{% url 'home' %}"><button type="button" class="btn btn-outline-danger w-100">Home</button></a></div>
-       </div>
+        <div class="card-footer bg-transparent border-success"><a href="{% url 'home' %}">
+            <button type="button" class="btn btn-outline-danger w-100">Home</button>
+        </a></div>
     </div>
+</div>
 
 </body>
 </html>
